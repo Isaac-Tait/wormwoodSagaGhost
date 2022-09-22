@@ -1,3 +1,5 @@
+const tailwind = require('tailwindcss')
+
 const {series, watch, src, dest, parallel} = require('gulp');
 const pump = require('pump');
 
@@ -39,6 +41,7 @@ function css(done) {
     var processors = [
         easyimport,
         colorFunction(),
+        tailwind(),
         autoprefixer(),
         cssnano()
     ];
